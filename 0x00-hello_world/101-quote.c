@@ -1,4 +1,5 @@
 #include <unistd.h>
+
 /**
 * main - Entry point
 *
@@ -6,8 +7,8 @@
 */
 int main(void)
 {
-const char *msg = "and that art is useful\" - Dora Korpar, 2015-10-19\n";
-const int len = 38;
+const char *msg = and that piece of art is useful" - Dora Korpar, 2015-10-19
+const int len = 59;
 write(2, msg, len);
 return (1);
 }
