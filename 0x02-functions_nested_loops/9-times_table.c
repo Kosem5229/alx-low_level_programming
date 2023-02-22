@@ -1,36 +1,40 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
 * times_table - prints the 9 times table, starting with 0.
-*
-* Description: This function prints the multiplication table for the number 9
-*              from 0 to 9, formatted in a 3-digit field.
-* Return: void
+* Return: empty output
 */
+
 void times_table(void)
-{
-int i, j, product;
 
-for (i = 0; i <= 9; i++)
 {
-for (j = 0; j <= 9; j++)
-{
-product = i * j;
-if (j == 0)
-{
-printf("%d", product);
-}
-else if (product < 10)
-{
-printf("   %d", product);
-}
-else if (product >= 10)
-{
-printf("  %d", product);
-}
-}
-printf("\n");
-}
-}
+int x, y, z, u, d;
 
+for (x = 0; x <= 9; x++)
+{
+for (y = 0; y <= 9; y++)
+{
+z = x * y;
+if (z > 9)
+{
+u = z % 10;
+d = (z - u) / 10;
+putchar(44);
+putchar(32);
+putchar(d + '0');
+putchar(u + '0');
+}
+else
+{
+if (y != 0)
+{
+putchar(44);
+putchar(32);
+putchar(32);
+}
+putchar(z + '0');
+}
+}
+putchar('\n');
+}
+}

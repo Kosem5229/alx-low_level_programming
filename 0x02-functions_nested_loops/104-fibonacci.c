@@ -1,31 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
-/** 
-* main - prints the first 98 Fibonacci numbers, starting with
-* 1 and 2, separated by a comma followed by a space.
-* Return: Always 0
+/**
+*main - prints the sum of even Fibonacci numbers whose value
+*does not exceed 4,000,000.
+*Return: Always 0
 */
-int main(void)
+	int main(void)
+
 {
-const int numFib = 98;
-long long *fib = (long long *) malloc(numFib * sizeof(long long));
-if (fib == NULL)
+int numFib = 100;
+int a = 1, b = 2;
+int sum = 2; /* */ start with sum = 2 to account for initial even number
+for (int i = 3; i <= numFib && b <= 4000000; i++)
 {
-printf("Error: could not allocate memory\n");
-return 1;
+int c = a + b;
+if (c % 2 == 0)
+{
+sum += c;
 }
-fib[0] = 1;
-fib[1] = 2;
-for (int i = 2; i < numFib; i++)
-{
-fib[i] = fib[i - 1] + fib[i - 2];
+a = b;
+b = c;
 }
-for (int i = 0; i < numFib - 1; i++)
-{
-printf("%lld, ", fib[i]);
-}
-printf("%lld\n", fib[numFib - 1]);
-free(fib);
-return 0;
+printf("%d\n", sum);
+return (0);
 }
 
